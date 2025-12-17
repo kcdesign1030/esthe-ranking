@@ -147,7 +147,7 @@ const Home = () => {
             <div className="shops-grid">
               {shops.map((shop, index) => (
                 <div key={shop.id} className={`shop-card ${shop.isPremium ? 'premium' : ''}`}>
-                  <div className="shop-rank">#{index + 1}</div>
+                  <div className="shop-rank">{index + 1}位</div>
                   {shop.isPremium && <div className="badge badge-premium">PREMIUM</div>}
                   {shop.imageUrl && (
                     <img src={shop.imageUrl} alt={shop.name} className="shop-image" />
