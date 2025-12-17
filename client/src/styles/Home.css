@@ -72,68 +72,68 @@
 .shops-grid {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 20px;
 }
 
 .shop-card {
-  background: white;
-  border-radius: 16px;
+  background: #fffef8;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
   transition: transform 0.3s, box-shadow 0.3s;
   position: relative;
   display: grid;
   grid-template-columns: 240px 1fr;
   min-height: 200px;
+  border: 2px solid #ffd700;
 }
 
 .shop-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .shop-card.premium {
-  border: 4px solid #ffd700;
-  box-shadow: 0 4px 20px rgba(255, 215, 0, 0.25);
+  border: 3px solid #ffd700;
 }
 
 .shop-rank {
   position: absolute;
-  top: 12px;
-  left: 12px;
+  top: 10px;
+  left: 10px;
   background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
   color: #333;
-  min-width: 60px;
-  height: 32px;
-  border-radius: 16px;
+  min-width: 50px;
+  height: 28px;
+  border-radius: 14px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 13px;
   z-index: 10;
-  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.4);
-  padding: 0 12px;
-  gap: 4px;
+  box-shadow: 0 2px 6px rgba(255, 215, 0, 0.3);
+  padding: 0 10px;
+  gap: 3px;
 }
 
 .shop-rank::before {
   content: '👑';
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .badge-premium {
   position: absolute;
-  top: 12px;
-  right: 12px;
+  top: 10px;
+  right: 10px;
   background: linear-gradient(135deg, #ff9800 0%, #ff6f00 100%);
   color: white;
-  padding: 6px 16px;
-  border-radius: 16px;
+  padding: 5px 14px;
+  border-radius: 14px;
   font-weight: 700;
-  font-size: 12px;
+  font-size: 11px;
   z-index: 10;
-  box-shadow: 0 2px 8px rgba(255, 152, 0, 0.3);
+  box-shadow: 0 2px 6px rgba(255, 152, 0, 0.3);
 }
 
 .shop-image {
@@ -145,14 +145,14 @@
 }
 
 .shop-info {
-  padding: 20px 24px;
+  padding: 18px 22px;
   display: flex;
   flex-direction: column;
 }
 
 .shop-info h4 {
-  font-size: 20px;
-  margin-bottom: 8px;
+  font-size: 19px;
+  margin-bottom: 6px;
   margin-top: 0;
   color: #333;
   font-weight: 700;
@@ -160,8 +160,8 @@
 
 .shop-location {
   color: #ff9800;
-  font-size: 14px;
-  margin-bottom: 12px;
+  font-size: 13px;
+  margin-bottom: 10px;
   font-weight: 600;
 }
 
@@ -171,15 +171,15 @@
 
 .shop-description {
   color: #555;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1.6;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .shop-address {
   color: #666;
-  font-size: 13px;
-  margin-bottom: 6px;
+  font-size: 12px;
+  margin-bottom: 5px;
 }
 
 .shop-address::before {
@@ -188,8 +188,8 @@
 
 .shop-phone {
   color: #666;
-  font-size: 13px;
-  margin-bottom: 6px;
+  font-size: 12px;
+  margin-bottom: 5px;
 }
 
 .shop-phone::before {
@@ -197,38 +197,38 @@
 }
 
 .shop-stats {
-  margin: 10px 0;
+  margin: 8px 0;
   color: #666;
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .shop-link {
   width: auto;
-  max-width: 200px;
+  max-width: 180px;
   margin-top: auto;
   background: linear-gradient(135deg, #ff9800 0%, #ff6f00 100%);
   color: white !important;
   border: none;
-  padding: 12px 24px;
-  border-radius: 6px;
+  padding: 10px 20px;
+  border-radius: 5px;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 13px;
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.2s;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
   text-decoration: none;
 }
 
 .shop-link:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(255, 152, 0, 0.4);
+  box-shadow: 0 4px 12px rgba(255, 152, 0, 0.4);
 }
 
 .shop-link::before {
   content: '↗';
-  font-size: 16px;
+  font-size: 14px;
 }
 
 @media (max-width: 768px) {
@@ -265,15 +265,13 @@
   }
 
   .shop-rank {
-    top: 10px;
-    left: 10px;
+    top: 8px;
+    left: 8px;
   }
 
   .badge-premium {
-    top: 10px;
-    right: 10px;
-    padding: 5px 12px;
-    font-size: 11px;
+    top: 8px;
+    right: 8px;
   }
 
   .shop-link {
