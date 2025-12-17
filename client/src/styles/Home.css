@@ -76,8 +76,8 @@
 }
 
 .shop-card {
-  background: #fffef8;
-  border-radius: 12px;
+  background: #ffffff;
+  border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
   transition: transform 0.3s, box-shadow 0.3s;
@@ -85,7 +85,7 @@
   display: grid;
   grid-template-columns: 240px 1fr;
   min-height: 200px;
-  border: 2px solid #ffd700;
+  border: 2px solid #f0f0f0;
 }
 
 .shop-card:hover {
@@ -94,46 +94,55 @@
 }
 
 .shop-card.premium {
-  border: 3px solid #ffd700;
+  border: 2px solid #ffd700;
 }
 
 .shop-rank {
   position: absolute;
-  top: 10px;
-  left: 10px;
-  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+  top: 12px;
+  left: 12px;
+  background: #ffffff;
   color: #333;
-  min-width: 50px;
-  height: 28px;
-  border-radius: 14px;
+  min-width: 60px;
+  height: 32px;
+  border-radius: 16px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  font-size: 13px;
+  font-size: 14px;
   z-index: 10;
-  box-shadow: 0 2px 6px rgba(255, 215, 0, 0.3);
-  padding: 0 10px;
-  gap: 3px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  padding: 0 12px;
+  gap: 4px;
+  border: 1px solid #f0f0f0;
 }
 
 .shop-rank::before {
   content: '👑';
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .badge-premium {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 12px;
+  right: 12px;
   background: linear-gradient(135deg, #ff9800 0%, #ff6f00 100%);
   color: white;
-  padding: 5px 14px;
-  border-radius: 14px;
+  padding: 6px 16px;
+  border-radius: 16px;
   font-weight: 700;
-  font-size: 11px;
+  font-size: 12px;
   z-index: 10;
   box-shadow: 0 2px 6px rgba(255, 152, 0, 0.3);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.badge-premium::before {
+  content: '👑';
+  font-size: 14px;
 }
 
 .shop-image {
@@ -145,23 +154,24 @@
 }
 
 .shop-info {
-  padding: 18px 22px;
+  padding: 20px 24px;
   display: flex;
   flex-direction: column;
 }
 
 .shop-info h4 {
-  font-size: 19px;
-  margin-bottom: 6px;
+  font-size: 20px;
+  margin-bottom: 8px;
   margin-top: 0;
   color: #333;
   font-weight: 700;
+  letter-spacing: -0.5px;
 }
 
 .shop-location {
   color: #ff9800;
-  font-size: 13px;
-  margin-bottom: 10px;
+  font-size: 14px;
+  margin-bottom: 12px;
   font-weight: 600;
 }
 
@@ -171,15 +181,17 @@
 
 .shop-description {
   color: #555;
-  font-size: 13px;
-  line-height: 1.6;
-  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 12px;
+  font-weight: 400;
 }
 
 .shop-address {
   color: #666;
-  font-size: 12px;
-  margin-bottom: 5px;
+  font-size: 13px;
+  margin-bottom: 6px;
+  font-weight: 400;
 }
 
 .shop-address::before {
@@ -188,36 +200,31 @@
 
 .shop-phone {
   color: #666;
-  font-size: 12px;
-  margin-bottom: 5px;
+  font-size: 13px;
+  margin-bottom: 6px;
+  font-weight: 400;
 }
 
 .shop-phone::before {
   content: '📞 ';
 }
 
-.shop-stats {
-  margin: 8px 0;
-  color: #666;
-  font-size: 12px;
-}
-
 .shop-link {
   width: auto;
-  max-width: 180px;
+  max-width: 200px;
   margin-top: auto;
   background: linear-gradient(135deg, #ff9800 0%, #ff6f00 100%);
   color: white !important;
   border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
+  padding: 11px 22px;
+  border-radius: 6px;
   font-weight: 600;
-  font-size: 13px;
+  font-size: 14px;
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.2s;
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
   text-decoration: none;
 }
 
@@ -228,7 +235,7 @@
 
 .shop-link::before {
   content: '↗';
-  font-size: 14px;
+  font-size: 15px;
 }
 
 @media (max-width: 768px) {
@@ -265,13 +272,13 @@
   }
 
   .shop-rank {
-    top: 8px;
-    left: 8px;
+    top: 10px;
+    left: 10px;
   }
 
   .badge-premium {
-    top: 8px;
-    right: 8px;
+    top: 10px;
+    right: 10px;
   }
 
   .shop-link {
