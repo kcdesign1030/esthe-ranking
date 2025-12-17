@@ -1,0 +1,68 @@
+.prefecture-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.areas-section {
+  margin: 2rem 0;
+}
+
+.areas-section h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 1.5rem;
+}
+
+.areas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.area-card {
+  background-color: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  color: #1f2937;
+  transition: all 0.2s;
+}
+
+.area-card:hover {
+  border-color: #6366f1;
+  background-color: #f9fafb;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.area-name {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.area-arrow {
+  color: #6366f1;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+@media (max-width: 640px) {
+  .areas-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+  
+  .area-card {
+    padding: 0.75rem 1rem;
+  }
+  
+  .area-name {
+    font-size: 0.875rem;
+  }
+}

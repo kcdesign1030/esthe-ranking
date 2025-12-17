@@ -4,6 +4,8 @@ import { AuthProvider } from './contexts/AuthContext';
 
 // Pages
 import Home from './pages/Home';
+import AreaPage from './pages/AreaPage';
+import PrefecturePage from './pages/PrefecturePage';
 import AdminLogin from './pages/admin/Login';
 import AdminDashboard from './pages/admin/Dashboard';
 import AdminShops from './pages/admin/Shops';
@@ -19,6 +21,8 @@ function App() {
       <Routes>
         {/* 公開ページ */}
         <Route path="/" element={<Home />} />
+        <Route path="/areas/:slug" element={<AreaPage />} />
+        <Route path="/prefecture/:slug" element={<PrefecturePage />} />
 
         {/* 管理画面 */}
         <Route path="/admin/login" element={<AdminLogin />} />

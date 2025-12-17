@@ -1,0 +1,147 @@
+.area-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.breadcrumb {
+  background-color: #f3f4f6;
+  padding: 1rem 0;
+  font-size: 0.875rem;
+}
+
+.breadcrumb a {
+  color: #6366f1;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb span {
+  color: #6b7280;
+}
+
+.page-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 2rem 0;
+}
+
+.page-header h1 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-top: 1rem;
+}
+
+.back-button {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: all 0.2s;
+}
+
+.back-button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.seo-content {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin: 2rem 0;
+}
+
+.seo-content h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.seo-content p {
+  color: #6b7280;
+  line-height: 1.75;
+}
+
+.ranking-section {
+  margin: 2rem 0;
+}
+
+.ranking-section h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 1.5rem;
+}
+
+.shops-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.empty-state {
+  background-color: white;
+  padding: 4rem 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.empty-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.empty-state p {
+  color: #6b7280;
+  font-size: 1.125rem;
+}
+
+.loading {
+  text-align: center;
+  padding: 4rem 2rem;
+  font-size: 1.125rem;
+  color: #6b7280;
+}
+
+.error-message {
+  background-color: white;
+  padding: 4rem 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.error-message h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.error-message p {
+  color: #6b7280;
+  margin-bottom: 2rem;
+}
+
+.error-message .back-button {
+  background-color: #6366f1;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.375rem;
+  font-size: 1rem;
+}
+
+.error-message .back-button:hover {
+  background-color: #4f46e5;
+}
