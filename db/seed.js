@@ -13,7 +13,7 @@ if (!connectionString) {
   process.exit(1);
 }
 
-const client = postgres(connectionString);
+const client = postgres(connectionString, { ssl: 'require' });
 const db = drizzle(client, { schema });
 
 async function seed() {
@@ -23,36 +23,43 @@ async function seed() {
     // 管理者ユーザーを作成
     const hashedPassword = await bcrypt.hash('admin123', 10);
     await client`
-      INSERT INTO users (email, password, role)
+      INSERT INTO users (email, password_hash, role)
       VALUES ('admin@example.com', ${hashedPassword}, 'admin')
       ON CONFLICT (email) DO NOTHING
     `;
     console.log('Admin user created: admin@example.com / admin123');
 
     // サンプル都道府県データ
-    const prefectures = ['東京都', '大阪府', '神奈川県', '愛知県', '福岡県'];
-    for (const name of prefectures) {
+    const prefectures = [
+      { name: '東京都', slug: 'tokyo', region: '関東', displayOrder: 1 },
+      { name: '大阪府', slug: 'osaka', region: '関西', displayOrder: 2 },
+      { name: '神奈川県', slug: 'kanagawa', region: '関東', displayOrder: 3 },
+      { name: '愛知県', slug: 'aichi', region: '東海', displayOrder: 4 },
+      { name: '福岡県', slug: 'fukuoka', region: '九州', displayOrder: 5 },
+    ];
+    for (const pref of prefectures) {
       await client`
-        INSERT INTO prefectures (name)
-        VALUES (${name})
-        ON CONFLICT DO NOTHING
+        INSERT INTO prefectures (name, slug, region, display_order)
+        VALUES (${pref.name}, ${pref.slug}, ${pref.region}, ${pref.displayOrder})
+        ON CONFLICT (slug) DO NOTHING
       `;
     }
     console.log('Prefectures created');
 
     // サンプル小エリアデータ
     const subAreas = [
-      { name: '渋谷', prefectureId: 1 },
-      { name: '新宿', prefectureId: 1 },
-      { name: '梅田', prefectureId: 2 },
-      { name: '心斎橋', prefectureId: 2 },
-      { name: '横浜', prefectureId: 3 },
+      { name: '渋谷', slug: 'tokyo-shibuya', prefectureId: 1, displayOrder: 1 },
+      { name: '新宿', slug: 'tokyo-shinjuku', prefectureId: 1, displayOrder: 2 },
+      { name: '梅田', slug: 'osaka-umeda', prefectureId: 2, displayOrder: 1 },
+      { name: '心斎橋', slug: 'osaka-shinsaibashi', prefectureId: 2, displayOrder: 2 },
+      { name: '横浜', slug: 'kanagawa-yokohama', prefectureId: 3, displayOrder: 1 },
     ];
 
     for (const area of subAreas) {
       await client`
-        INSERT INTO sub_areas (name, prefecture_id)
-        VALUES (${area.name}, ${area.prefectureId})
+        INSERT INTO sub_areas (name, slug, prefecture_id, display_order)
+        VALUES (${area.name}, ${area.slug}, ${area.prefectureId}, ${area.displayOrder})
+        ON CONFLICT (slug) DO NOTHING
       `;
     }
     console.log('Sub areas created');

@@ -31,7 +31,7 @@
     "@types/react-dom": "^18.2.17",
     "@vitejs/plugin-react": "^4.2.1",
     "concurrently": "^8.2.2",
-    "drizzle-kit": "^0.20.6",
+    "drizzle-kit": "^0.20.18",
     "nodemon": "^3.0.2",
     "vite": "^5.0.8"
   }

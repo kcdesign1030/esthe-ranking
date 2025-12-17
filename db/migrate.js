@@ -12,7 +12,7 @@ if (!connectionString) {
   process.exit(1);
 }
 
-const client = postgres(connectionString);
+const client = postgres(connectionString, { ssl: 'require' });
 const db = drizzle(client, { schema });
 
 async function migrate() {
