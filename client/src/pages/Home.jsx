@@ -148,7 +148,7 @@ const Home = () => {
               {shops.map((shop, index) => (
                 <div key={shop.id} className={`shop-card ${shop.isPremium ? 'premium' : ''}`}>
                   <div className="shop-rank">#{index + 1}</div>
-                  {shop.isPremium && <div className="badge badge-premium">有料プラン</div>}
+                  {shop.isPremium && <div className="badge badge-premium">PREMIUM</div>}
                   {shop.imageUrl && (
                     <img src={shop.imageUrl} alt={shop.name} className="shop-image" />
                   )}
@@ -167,9 +167,7 @@ const Home = () => {
                     {shop.phone && (
                       <p className="shop-phone">📞 {shop.phone}</p>
                     )}
-                    <div className="shop-stats">
-                      <span>👆 {shop.clickCount} クリック</span>
-                    </div>
+
                     {shop.url && (
                       <button
                         className="btn btn-primary shop-link"
