@@ -175,7 +175,7 @@ const Home = () => {
                         className="btn btn-primary shop-link"
                         onClick={() => handleClick(shop.id, shop.url)}
                       >
-                        公式サイトへ
+                        公式サイトを見る
                       </button>
                     )}
                   </div>

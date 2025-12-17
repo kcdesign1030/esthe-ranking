@@ -101,32 +101,39 @@
   position: absolute;
   top: 12px;
   left: 12px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  display: flex;
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+  color: #333;
+  min-width: 60px;
+  height: 32px;
+  border-radius: 16px;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  font-size: 15px;
+  font-size: 14px;
   z-index: 10;
-  box-shadow: 0 3px 10px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.4);
+  padding: 0 12px;
+  gap: 4px;
+}
+
+.shop-rank::before {
+  content: '👑';
+  font-size: 16px;
 }
 
 .badge-premium {
   position: absolute;
   top: 12px;
   right: 12px;
-  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
-  color: #333;
+  background: linear-gradient(135deg, #ff9800 0%, #ff6f00 100%);
+  color: white;
   padding: 6px 16px;
   border-radius: 16px;
   font-weight: 700;
   font-size: 12px;
   z-index: 10;
-  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.3);
+  box-shadow: 0 2px 8px rgba(255, 152, 0, 0.3);
 }
 
 .shop-image {
@@ -152,10 +159,14 @@
 }
 
 .shop-location {
-  color: #667eea;
+  color: #ff9800;
   font-size: 14px;
   margin-bottom: 12px;
   font-weight: 600;
+}
+
+.shop-location::before {
+  content: '📍 ';
 }
 
 .shop-description {
@@ -165,11 +176,24 @@
   margin-bottom: 12px;
 }
 
-.shop-address,
+.shop-address {
+  color: #666;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.shop-address::before {
+  content: '📍 ';
+}
+
 .shop-phone {
   color: #666;
   font-size: 13px;
   margin-bottom: 6px;
+}
+
+.shop-phone::before {
+  content: '📞 ';
 }
 
 .shop-stats {
@@ -241,9 +265,6 @@
   }
 
   .shop-rank {
-    width: 40px;
-    height: 40px;
-    font-size: 13px;
     top: 10px;
     left: 10px;
   }
