@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Header from '../components/Header';
+import ShopCard from '../components/ShopCard';
 import { shopsAPI, prefecturesAPI, subAreasAPI } from '../utils/api';
 import '../styles/Home.css';
+import '../styles/ShopCard.css';
 
 const Home = () => {
   const [shops, setShops] = useState([]);
@@ -146,41 +148,7 @@ const Home = () => {
           ) : (
             <div className="shops-grid">
               {shops.map((shop, index) => (
-                <div key={shop.id} className={`shop-card ${shop.isPremium ? 'premium' : ''}`}>
-                  <div className="shop-rank">{index + 1}位</div>
-                  {shop.isPremium && <div className="badge badge-premium">PREMIUM</div>}
-                  {shop.imageUrl && (
-                    <img src={shop.imageUrl} alt={shop.name} className="shop-image" />
-                  )}
-                  <div className="shop-info">
-                    <h4>
-                      {shop.name}
-                      <span className="badge badge-store">🏠 店舗</span>
-                    </h4>
-                    <p className="shop-location">
-                      {shop.prefectureName}
-                      {shop.subAreaName && ` / ${shop.subAreaName}`}
-                    </p>
-                    {shop.description && (
-                      <p className="shop-description">{shop.description}</p>
-                    )}
-                    {shop.address && (
-                      <p className="shop-address">📍 {shop.address}</p>
-                    )}
-                    {shop.phone && (
-                      <p className="shop-phone">📞 {shop.phone}</p>
-                    )}
-
-                    {shop.url && (
-                      <button
-                        className="btn btn-primary shop-link"
-                        onClick={() => handleClick(shop.id, shop.url)}
-                      >
-                        公式サイトを見る
-                      </button>
-                    )}
-                  </div>
-                </div>
+                <ShopCard key={shop.id} shop={shop} rank={index + 1} />
               ))}
             </div>
           )}
