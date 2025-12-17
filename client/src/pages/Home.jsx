@@ -153,7 +153,10 @@ const Home = () => {
                     <img src={shop.imageUrl} alt={shop.name} className="shop-image" />
                   )}
                   <div className="shop-info">
-                    <h4>{shop.name}</h4>
+                    <h4>
+                      {shop.name}
+                      <span className="badge badge-store">🏠 店舗</span>
+                    </h4>
                     <p className="shop-location">
                       {shop.prefectureName}
                       {shop.subAreaName && ` / ${shop.subAreaName}`}

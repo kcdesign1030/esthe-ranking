@@ -145,6 +145,20 @@
   font-size: 14px;
 }
 
+.badge-store {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  background: linear-gradient(135deg, #ff9800 0%, #ff6f00 100%);
+  color: white;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 11px;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
 .shop-image {
   width: 240px;
   height: 100%;
